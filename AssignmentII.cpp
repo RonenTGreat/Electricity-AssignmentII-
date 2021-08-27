@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdlib>
 
 using namespace std;
 
@@ -16,25 +17,25 @@ int main()
     cout << ">>";
     cin >> quantityOfElectricity;
 
-    if(quantityOfElectricity <= 150){
+    if(abs(quantityOfElectricity) <= 150){
         typeOfCustomer = "Domestic";
-        monthlyBill = 1.2 * quantityOfElectricity;
+        monthlyBill = 1.2 * abs(quantityOfElectricity);
         ruralElectrification = monthlyBill * 0.01;
         totalBill = monthlyBill + ruralElectrification;
         governmentSubsidy = totalBill * 0.5;
         pay = totalBill - governmentSubsidy;
     }
-    else if(quantityOfElectricity > 150 && quantityOfElectricity <= 350){
+    else if(abs(quantityOfElectricity) > 150 && abs(quantityOfElectricity) <= 350){
         typeOfCustomer = "Industrial";
-        monthlyBill = 2.3 * quantityOfElectricity;
+        monthlyBill = 2.3 * abs(quantityOfElectricity);
         ruralElectrification = monthlyBill * 0.01;
         totalBill = monthlyBill + ruralElectrification;
         governmentSubsidy = totalBill * 0.5;
         pay = totalBill - governmentSubsidy;
     }
-    else if(quantityOfElectricity > 350){
+    else if(abs(quantityOfElectricity) > 350){
         typeOfCustomer = "Commercial";
-        monthlyBill = 3.5 * quantityOfElectricity;
+        monthlyBill = 3.5 * abs(quantityOfElectricity);
         ruralElectrification = monthlyBill * 0.01;
         totalBill = monthlyBill + ruralElectrification;
         governmentSubsidy = totalBill * 0.5;
