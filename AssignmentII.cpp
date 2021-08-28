@@ -16,26 +16,27 @@ int main()
     cout << "Please enter the quantity of electricity you have used(KW)." << endl;
     cout << ">>";
     cin >> quantityOfElectricity;
+    quantityOfElectricity = abs(quantityOfElectricity);
 
-    if(abs(quantityOfElectricity) <= 150){
+    if(quantityOfElectricity <= 150){
         typeOfCustomer = "Domestic";
-        monthlyBill = 1.2 * abs(quantityOfElectricity);
+        monthlyBill = 1.2 * quantityOfElectricity;
         ruralElectrification = monthlyBill * 0.01;
         totalBill = monthlyBill + ruralElectrification;
         governmentSubsidy = totalBill * 0.5;
         pay = totalBill - governmentSubsidy;
     }
-    else if(abs(quantityOfElectricity) > 150 && abs(quantityOfElectricity) <= 350){
+    else if(quantityOfElectricity > 150 && quantityOfElectricity <= 350){
         typeOfCustomer = "Industrial";
-        monthlyBill = 2.3 * abs(quantityOfElectricity);
+        monthlyBill = 2.3 * quantityOfElectricity;
         ruralElectrification = monthlyBill * 0.01;
         totalBill = monthlyBill + ruralElectrification;
         governmentSubsidy = totalBill * 0.5;
         pay = totalBill - governmentSubsidy;
     }
-    else if(abs(quantityOfElectricity) > 350){
+    else if(quantityOfElectricity > 350){
         typeOfCustomer = "Commercial";
-        monthlyBill = 3.5 * abs(quantityOfElectricity);
+        monthlyBill = 3.5 * quantityOfElectricity;
         ruralElectrification = monthlyBill * 0.01;
         totalBill = monthlyBill + ruralElectrification;
         governmentSubsidy = totalBill * 0.5;
